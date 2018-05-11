@@ -8,21 +8,23 @@ apt_update 'update' do
   action :update
 end
 
+execute 'apache_configtest' do
+  command 'curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -'
+  only_if { node['platform'] == 'debian' }
+end
+
+execute 'apache_configtest' do
+  command 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -'
+  only_if { node['platform'] == 'ubuntu' }
+end
+
 apt_repository 'docker.io' do
   uri 'https://download.docker.com/linux/debian/'
   components ['main']
-  key 'https://download.docker.com/linux/debian/gpg'
   only_if { node['platform'] == 'debian' }
 end
 
 apt_repository 'docker.io' do
   uri 'https://download.docker.com/linux/ubuntu/'
-  key 'https://download.docker.com/linux/ubuntu/gpg'
   only_if { node['platform'] == 'ubuntu' }
-end
-
-apt_repository 'docker.io' do
-  uri 'https://download.docker.com/linux/centos/'
-  key 'https://download.docker.com/linux/centos/gpg'
-  only_if { node['platform'] == 'centos' }
 end
