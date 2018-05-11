@@ -22,7 +22,7 @@ directories = [
 ]
 
 directories.each do |dir|
-  directory "#{dir}" do
+  directory dir do
     owner 'root'
     group 'root'
     mode '0755'
