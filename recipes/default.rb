@@ -18,6 +18,7 @@ include_recipe 'ecs::sysctl'
 directories = [
   "/etc/ecs",
   "/var/log/ecs",
+  "/var/lib/ecs/",
   "/var/lib/ecs/data"
 ]
 
