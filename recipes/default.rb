@@ -43,9 +43,9 @@ template '/etc/ecs/ecs.config' do
     ECS_LOGFILE:                           node['ecs']['ECS_LOGFILE'],
     ECS_AVAILABLE_LOGGING_DRIVERS:         node['ecs']['ECS_AVAILABLE_LOGGING_DRIVERS'],
     ECS_LOGLEVEL:                          node['ecs']['ECS_LOGLEVEL'],
-    ECS_CLUSTER:                           node['ecs']['ECS_CLUSTER']
-    AWS_DEFAULT_REGION:                    node['ecs']['AWS_DEFAULT_REGION']
-    AWS_ACCESS_KEY_ID:                     node['ecs']['AWS_ACCESS_KEY_ID']
+    ECS_CLUSTER:                           node['ecs']['ECS_CLUSTER'],
+    AWS_DEFAULT_REGION:                    node['ecs']['AWS_DEFAULT_REGION'],
+    AWS_ACCESS_KEY_ID:                     node['ecs']['AWS_ACCESS_KEY_ID'],
     AWS_SECRET_ACCESS_KEY:                 node['ecs']['AWS_SECRET_ACCESS_KEY']
   )
 end
