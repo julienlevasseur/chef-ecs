@@ -52,4 +52,5 @@ end
 
 execute 'Docker Run' do
   command 'docker run --name ecs-agent --detach=true --restart=on-failure:10 --volume=/var/run:/var/run --volume=/var/log/ecs/:/log --volume=/var/lib/ecs/data:/data --volume=/etc/ecs:/etc/ecs --net=host --env-file=/etc/ecs/ecs.config amazon/amazon-ecs-agent:latest'
+  not_if "docker ps|grep ecs-agent"
 end
