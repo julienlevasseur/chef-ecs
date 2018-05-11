@@ -22,6 +22,7 @@ platforms.each do |platform|
 
   execute 'add_docker_repo' do
     command "add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/#{platform} $(lsb_release -cs) stable\""
+    not_if "grep docker /etc/apt/sources.list"
     only_if { node['platform'] == platform }
   end
 end
