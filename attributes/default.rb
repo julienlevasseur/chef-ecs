@@ -7,4 +7,4 @@ default['ecs']['ECS_AVAILABLE_LOGGING_DRIVERS']         = [
                                                             "awslogs"
                                                           ]
 default['ecs']['ECS_LOGLEVEL']                          = "info"
-default['ecs']['ECS_CLUSTER']                           = "/data"
+default['ecs']['ECS_CLUSTER']                           = "default"
