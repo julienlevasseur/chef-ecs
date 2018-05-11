@@ -11,7 +11,7 @@ package 'software-properties-common'
 
 include_recipe 'ecs::repos'
 
-package 'docker.io'
+package 'docker-ce'
 
 include_recipe 'ecs::sysctl'
 
